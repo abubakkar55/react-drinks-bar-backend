@@ -47,11 +47,6 @@ async function run() {
             const result = await drinksCollection.deleteOne(query);
             res.json(result);
         })
-
-        app.get("/", (req, res) => {
-            res.send("Running");
-        })
-
     }
 
     finally {
@@ -63,6 +58,10 @@ async function run() {
 run().catch(error => {
     console.dir(error);
 });
+
+app.get("/", (req, res) => {
+    res.send("Running");
+})
 
 
 app.listen(port, () => {
