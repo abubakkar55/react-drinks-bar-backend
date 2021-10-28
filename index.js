@@ -48,6 +48,10 @@ async function run() {
             res.json(result);
         })
 
+        app.get("/", (req, res) => {
+            res.send("Running");
+        })
+
     }
 
     finally {
